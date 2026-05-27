@@ -1,71 +1,82 @@
-# 🤖 Robot Framework Automation Assignment
 
-## 📌 Objective
+# API Automation Framework (REST Assured + Cucumber + JAVA)
 
-Automate a Google search using Robot Framework and Selenium. Extract top 4–5 results for **"robotframework"**, print them to console, and save to a file.
+This project is a **API(https://api.restful-api.dev/objects)  automation test framework** built using **Java, Restassured, Cucumber (BDD)**, following **POJO ** and **best practices** for scalability, readability, and maintainability.
 
----
 
-## 🚀 Features
+## Tech Stack
 
-* Opens Google and performs search
-* Extracts top results
-* Prints results to console
-* Saves results to `output.txt`
-* Captures execution screenshots
+- **Language:** Java 
+- **Automation Tool:** Restassuerd library 
+- **BDD Framework:** Cucumber 
+- **Test Runner:** TestNG
+- **Build Tool:** Maven
+- **Design Pattern:** POJO
+- **IDE:** IntelliJ IDEA
+- **JSON Processing**Jackson  2.15.2
+- **Version Control**  Git & GitHub
 
----
+## Project Structure
 
-## 🛠️ Tech Stack
-
-* Python
-* Robot Framework
-* SeleniumLibrary
-
----
-
-## 📂 Project Structure
-
-```
-robot-framework-automation-assignment/
+```text
+BE_API_Automation                          # REST Assured API Automation Framework
 │
-├── tests/google_search.robot
-├── results/
-│   ├── output.txt
-│   ├── log.html
-│   ├── report.html
-│   ├── output.xml
-│   └── screenshots/
-├── README.md
-└── .gitignore
-```
+├── src
+│   ├── main
+│   │   └── java
+│   │       └── com
+│   │           ├── requestPojo            # Request POJO classes
+│   │           │   ├── CreateObject.java
+│   │           │   └── CreateUser.java
+│   │           │
+│   │           └── responsePojo           # Response POJO classes
+│   │               └── CreateObjectResponse.java
+│
+├── src
+│   ├── test
+│   │   ├── java
+│   │   │   ├── runner                     # TestNG + Cucumber runner
+│   │   │   │   └── TestRunner.java
+│   │   │   │
+│   │   │   ├── steps                      # Step Definitions
+│   │   │   │   └── CreateObjectSteps.java
+│   │   │   │
+│   │   │   └── utility                    # Framework utilities
+│   │   │       ├── ConfigReader.java      # Reads config.properties
+│   │   │       ├── BaseSpecification.java # Request & Response SpecBuilder
+│   │   │       └── ApiEndpoints.java      # API endpoint constants
+│   │   │
+│   │   └── resources
+│   │       ├── config.properties          # Environment configuration
+│   │       └── allfeature                 # Cucumber feature files
+│   │           └── createObject.feature
+│
+├── reports                                # Test execution reports
+│   ├── cucumber-report.html
+│   ├── cucumber-report.json
+│   └── cucumber-report.xml
+│
+├── pom.xml                                # Maven dependencies
+├── testng.xml                             # TestNG suite file
+├── Jenkinsfile                            # Jenkins CI pipeline
+├── .gitignore                             # Git ignore rules
+└── README.md                              # Project documentation
+``
 
----
+### Testing & Execution
+- **REST Assured** - Fluent API for HTTP requests and response validation
+- **Cucumber** - BDD framework for writing tests in Gherkin language
+- **TestNG** - Powerful test framework with parallel execution support
+- **Jackson** - JSON serialization/deserialization for POJO mapping
 
-## ▶️ Run the Test
+### Reporting & Logging
+- **Cucumber HTML Reports** - Beautiful test execution reports with pass/fail status
+- **Cucumber JSON Reports** - Machine-readable format for CI/CD integration
 
-```bash
-pip install robotframework robotframework-seleniumlibrary
-python -m robot -d results tests/google_search.robot
-```
 
----
+#### Project Dependencies
+`from pom.xml control all dependancy.
 
-## 📸 Output
 
-* Console: Top results
-* File: `results/output.txt`
-* Reports: `log.html`, `report.html`
-* Screenshots in `results/screenshots/`
 
----
-
-## ⚠️ Note
-
-Google may show CAPTCHA during automation. Manual resolution may be required.
-
----
-
-## 👩‍💻 Author
-
-Divita Varshney
+	
